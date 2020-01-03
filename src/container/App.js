@@ -1,7 +1,12 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 
-import { color_primary_dark, color_grey_1 } from "../atoms/variables";
+import {
+  color_primary_dark,
+  color_grey_1,
+  color_sky_dark,
+  color_sky_light
+} from "../atoms/variables";
 
 import font_bold from "../font/strat-bold.ttf";
 import font_heavy from "../font/strat-heavy.ttf";
@@ -12,10 +17,16 @@ import font_thin from "../font/strat-thin.ttf";
 
 import { media } from "../utilities/mediaQueriesBuilder";
 
+import Particles from "react-particles-js";
+import particlesConfig from "../utilities/particlesConfig";
+import { MeteorShower } from "../utilities/meteorShower";
+
 const App = () => {
   return (
     <>
       <GlobalStyle />
+      <Particles className="particlesJs" params={particlesConfig} />
+      <MeteorShower count={5} />
     </>
   );
 };
@@ -93,5 +104,16 @@ const GlobalStyle = createGlobalStyle`
 
 	body{
 		min-width: 320px;
+	}
+
+	.particlesJs {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: ${color_sky_dark};
+		background-image: linear-gradient(to bottom, ${color_sky_dark}, ${color_sky_light});
+		z-index: -100;
 	}
 }`;
