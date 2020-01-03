@@ -1,11 +1,12 @@
 import React from "react";
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 import {
   color_primary_dark,
   color_grey_1,
   color_sky_dark,
-  color_sky_light
+  color_sky_light,
+  color_grey_7
 } from "../atoms/variables";
 
 import font_bold from "../font/strat-bold.ttf";
@@ -21,12 +22,17 @@ import Particles from "react-particles-js";
 import particlesConfig from "../utilities/particlesConfig";
 import { MeteorShower } from "../utilities/meteorShower";
 
+import Hero from "../components/Hero";
+
 const App = () => {
   return (
     <>
       <GlobalStyle />
       <Particles className="particlesJs" params={particlesConfig} />
       <MeteorShower count={5} />
+      <Section id="home" transparent>
+        <Hero />
+      </Section>
     </>
   );
 };
@@ -117,3 +123,9 @@ const GlobalStyle = createGlobalStyle`
 		z-index: -100;
 	}
 }`;
+
+// content container
+const Section = styled.section`
+  background-color: ${props =>
+    props.transparent ? `transparent` : color_grey_7};
+`;
