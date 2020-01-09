@@ -23,6 +23,7 @@ import particlesConfig from "../utilities/particlesConfig";
 import { MeteorShower } from "../utilities/meteorShower";
 
 import Hero from "../components/Hero";
+import Profile from "../components/Profile";
 
 const App = () => {
   return (
@@ -32,6 +33,9 @@ const App = () => {
       <MeteorShower count={5} />
       <Section id="home" transparent>
         <Hero />
+      </Section>
+      <Section id="about">
+        <Profile />
       </Section>
     </>
   );
@@ -124,8 +128,18 @@ const GlobalStyle = createGlobalStyle`
 	}
 }`;
 
-// content container
+// content container with curved top
 const Section = styled.section`
   background-color: ${props =>
     props.transparent ? `transparent` : color_grey_7};
+
+  :nth-of-type(2) {
+    padding-top: 6rem;
+    border-top-right-radius: 50% 7vh;
+    border-top-left-radius: 50% 7vh;
+  }
+
+  :nth-last-of-type(2) {
+    padding-bottom: 10rem;
+  }
 `;

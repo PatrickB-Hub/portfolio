@@ -26,3 +26,7 @@ export const sizes = {
   sizeV: 550,
   sizeVI: 425
 };
+
+// width of the container
+export const min_width = "30rem";
+export const max_width = "100rem";
