@@ -24,6 +24,7 @@ import { MeteorShower } from "../utilities/meteorShower";
 
 import Hero from "../components/Hero";
 import Profile from "../components/Profile";
+import Skills from "../components/Skills";
 
 const App = () => {
   return (
@@ -36,6 +37,9 @@ const App = () => {
       </Section>
       <Section id="about">
         <Profile />
+      </Section>
+      <Section id="skills">
+        <Skills />
       </Section>
     </>
   );
