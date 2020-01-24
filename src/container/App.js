@@ -27,6 +27,7 @@ import Profile from "../components/Profile";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 const App = () => {
   return (
@@ -46,8 +47,11 @@ const App = () => {
       <Section id="projects">
         <Projects />
       </Section>
-	  <Section id="contact">
+      <Section id="contact">
         <Contact />
+      </Section>
+      <Section id="footer" transparent>
+        <Footer />
       </Section>
     </>
   );
