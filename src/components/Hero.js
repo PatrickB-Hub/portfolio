@@ -8,6 +8,7 @@ import { color_primary, color_secondary } from "../atoms/variables";
 import avatarImage from "../images/avatar.png";
 
 import { media } from "../utilities/mediaQueriesBuilder";
+import smoothScroll from "../utilities/smoothScroll";
 
 const Hero = () => {
   return (
@@ -17,7 +18,13 @@ const Hero = () => {
         <Name>Patrick Becker</Name>
         <Status>&lt; Webentwickler &#47;&gt;</Status>
         <Wrapper>
-          <Button>Kontakt</Button>
+          <Button
+            onClick={() => {
+              smoothScroll("contact");
+            }}
+          >
+            Kontakt
+          </Button>
         </Wrapper>
         <div>
           <Socials />

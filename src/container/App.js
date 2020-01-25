@@ -22,6 +22,7 @@ import Particles from "react-particles-js";
 import particlesConfig from "../utilities/particlesConfig";
 import { MeteorShower } from "../utilities/meteorShower";
 
+import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Profile from "../components/Profile";
 import Skills from "../components/Skills";
@@ -35,6 +36,7 @@ const App = () => {
       <GlobalStyle />
       <Particles className="particlesJs" params={particlesConfig} />
       <MeteorShower count={5} />
+	  <Navbar />
       <Section id="home" transparent>
         <Hero />
       </Section>
