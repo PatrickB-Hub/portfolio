@@ -61,7 +61,7 @@ const App = () => {
 
 export default App;
 
-// applies a global reset and global styles
+// reset and global styles
 const GlobalStyle = createGlobalStyle`
 	@font-face {
 	    font-family: "Stratum";
