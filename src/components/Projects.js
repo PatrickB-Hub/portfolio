@@ -137,7 +137,7 @@ const Card = styled.div`
   `}
 
   ${media.sizeV`
-    width: 90%;
+    width: 95%;
   `}
 `;
 

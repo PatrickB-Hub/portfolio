@@ -33,15 +33,15 @@ const Contact = () => {
   };
 
   const onSubmitHandler = e => {
+    setMailStatus({ mailSent: false, error: null });
     e.preventDefault();
     axios({
       method: "POST",
       url: `${process.env.REACT_APP_API}`,
-      headers: { "content-type": "application/json" },
       data: contactDetails
     })
-      .then(result => {
-        if (result.data.sent) {
+      .then(response => {
+        if (response.data.sent) {
           setMailStatus({ mailSent: true, error: false });
           setContactDetails({ name: "", email: "", message: "" });
         } else {
@@ -55,7 +55,7 @@ const Contact = () => {
 
   return (
     <Container title="Kontakt">
-      <App>
+      <FormWrapper>
         <form onSubmit={onSubmitHandler}>
           <InputWrapper>
             <input
@@ -102,23 +102,26 @@ const Contact = () => {
             </Error>
           )}
         </form>
-      </App>
+      </FormWrapper>
     </Container>
   );
 };
 
 export default Contact;
 
-const App = styled.div`
-  max-width: 820px;
-  margin: 0 auto;
+const FormWrapper = styled.div`
+  width: 85%;
+
+  ${media.sizeIII`
+    min-width: 90%;
+  `}
 `;
 
 const InputWrapper = styled.div`
   display: grid;
   grid-template-areas: "firstName email" "message message";
-  grid-gap: 1.2rem;
-  margin: 1.2rem 0;
+  grid-gap: 1rem;
+  margin: 2rem .5rem 0;
 
   .name-field {
     grid-area: firstName;
@@ -133,22 +136,22 @@ const InputWrapper = styled.div`
     height: 25rem;
 
     ${media.sizeIV`
-      height: 18rem;  
-	`}
+      height: 20rem;  
+	  `}
   }
 
   .name-field,
   .email-field,
   .message-field {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-family: inherit;
     color: inherit;
-    padding: 12px;
+    padding: 13px;
     border-radius: 10px;
     background-color: ${color_grey_8};
     border: none;
     border: 1px solid #ccc
-    min-width: 30vw;
+    min-width: 70%;
     display: block;
     resize: none;
     transition: all 0.3s;
@@ -174,19 +177,18 @@ const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 0.5rem;
-  width: auto;
 `;
 
 const Button = styled.button`
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-family: inherit;
   font-weight: inherit;
   text-decoration: none;
   text-align: center;
   padding: 1.2rem 2.5rem;
   width: 12rem;
-  margin-top: 0.6rem;
+  margin-top: 1.5rem;
   border-radius: 3px;
   border: transparent;
   background-color: ${color_primary_dark}
@@ -211,7 +213,7 @@ const Button = styled.button`
 `;
 
 const Success = styled.div`
-  width: 30vw;
+  width: 70%;
   font-size: 1.6rem;
   font-family: inherit;
   font-weight: inherit;
@@ -222,7 +224,7 @@ const Success = styled.div`
 `;
 
 const Error = styled.div`
-  width: 30vw;
+  width: 70%;
   font-size: 1.6rem;
   font-family: inherit;
   font-weight: inherit;

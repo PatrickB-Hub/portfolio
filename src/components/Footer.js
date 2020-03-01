@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>Kontaktieren Sie mich!</Title>
+        <Title>So bin Ich zu erreichen:</Title>
         <Content>
           E-Mail:{" "}
           <MailTo href="mailto: kontakt@patrickbecker.me" rel="noopener">

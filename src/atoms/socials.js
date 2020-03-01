@@ -10,7 +10,7 @@ export const Socials = ({ small }) => (
   <Wrapper isSmall={small}>
     <SocialIcon
       isSmall={small}
-      href="https://github.com/"
+      href="https://github.com/PatrickB-Hub"
       target="_blank"
       rel="noopener"
     >

@@ -79,11 +79,11 @@ const Wrapper = styled.div`
 
 const Button = styled.a`
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-family: inherit;
   font-weight: inherit;
   text-decoration: none;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem;
   border-radius: 3px;
   border: 2px solid ${props => (props.secondary ? "#fff" : "transparent")};
   background-color: ${props =>

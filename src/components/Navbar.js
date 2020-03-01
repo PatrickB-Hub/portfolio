@@ -199,7 +199,7 @@ const NavItem = styled.li`
   button {
     font-family: inherit;
     font-size: 1.8rem;
-    font-weight: 300;
+    font-weight: 400;
     white-space: nowrap;
     padding: 1rem 1.5rem;
     background: transparent;
