@@ -52,3 +52,13 @@ export const navReveal = keyframes`
 		opacity: 1;
 	}
 `;
+
+// bounces up and down
+export const bounce = keyframes`
+  	50% {
+		transform: translateY(-50%);
+  	}
+  	100% {
+		transform: translateY(0);
+  	}
+`;

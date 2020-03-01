@@ -10,6 +10,8 @@ import avatarImage from "../images/avatar.png";
 import { media } from "../utilities/mediaQueriesBuilder";
 import smoothScroll from "../utilities/smoothScroll";
 
+import ScrollIndicator from "./ScrollIndicator";
+
 const Hero = () => {
   return (
     <StyledSection>
@@ -30,6 +32,7 @@ const Hero = () => {
           <Socials />
         </div>
       </InfoBox>
+      <ScrollIndicator />
     </StyledSection>
   );
 };
